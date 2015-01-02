@@ -12,7 +12,7 @@ module ToEnum
           if block_given?
             super
           else
-            to_enum(:#{method}, *args)
+            to_enum(__method__, *args)
           end
         end
       CODE

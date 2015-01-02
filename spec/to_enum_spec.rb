@@ -23,6 +23,16 @@ describe "Module.to_enum" do
     klass.new
   end
 
+  it "does not change behavior of method when block given" do
+    yields = []
+    subject.simple { |x| yields << x }
+    yields.should eq([1, 2])
+
+    yields = []
+    subject.complex(1, c: 3) { |x| yields << x }
+    yields.should eq([1, 2, 3, 4])
+  end
+
   it "can turn a simple method into an enumerable" do
     enum = subject.simple
     enum.should be_a Enumerator
