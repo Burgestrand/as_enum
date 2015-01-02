@@ -1,26 +1,26 @@
 describe "Module.as_enum" do
   subject do
-    Class.new do
-      class << self
-        as_enum def simple
-          yield 1
-          yield 2
-        end
+    klass = Class.new do
+      as_enum def simple
+        yield 1
+        yield 2
+      end
 
-        as_enum def complex(a, b = 2, c: , d: 4)
-          yield a
-          yield b
-          yield c
-          yield d
-        end
+      as_enum def complex(a, b = 2, c: , d: 4)
+        yield a
+        yield b
+        yield c
+        yield d
+      end
 
-        AsEnum.as_enum self, def no_conflict(a)
-          yield 1
-          yield a
-          yield 3
-        end
+      AsEnum.as_enum self, def no_conflict(a)
+        yield 1
+        yield a
+        yield 3
       end
     end
+
+    klass.new
   end
 
   it "can turn a simple method into an enumerable" do
