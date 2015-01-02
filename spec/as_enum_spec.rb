@@ -1,19 +1,19 @@
-describe "Module.to_enum" do
+describe "Module.as_enum" do
   subject do
     klass = Class.new do
-      to_enum def simple
+      as_enum def simple
         yield 1
         yield 2
       end
 
-      to_enum def complex(a, b = 2, c: , d: 4)
+      as_enum def complex(a, b = 2, c: , d: 4)
         yield a
         yield b
         yield c
         yield d
       end
 
-      ToEnum.to_enum self, def no_conflict(a)
+      AsEnum.as_enum self, def no_conflict(a)
         yield 1
         yield a
         yield 3

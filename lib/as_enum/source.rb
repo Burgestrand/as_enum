@@ -1,9 +1,9 @@
-require "to_enum/version"
+require "as_enum/version"
 
-module ToEnum
+module AsEnum
   module_function
 
-  def to_enum(target = self, method)
+  def as_enum(target = self, method)
     trace = caller_locations(1, 1)[0]
 
     target.prepend Module.new {
