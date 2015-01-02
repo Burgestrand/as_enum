@@ -1,9 +1,9 @@
-require "as_enum/version"
+require "to_enum/version"
 
-module AsEnum
+module ToEnum
   module_function
 
-  def as_enum(target = self, method)
+  def to_enum(target = self, method)
     target.prepend Module.new {
       class_eval <<-CODE, __FILE__, __LINE__
         def #{method}(*args)
