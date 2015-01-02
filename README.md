@@ -1,6 +1,6 @@
 # as_enum
 
-Allows you to turn any method that yields into a method that accepts no block and
+Allows you to turn any method that yields, into a method that accepts no block and
 returns an enumerator instead.
 
 ## Installation
