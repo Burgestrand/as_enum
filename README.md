@@ -33,7 +33,7 @@ class Cow
 end
 
 cow = Cow.new
-enum = cow.each_thing(5) # => Enumerator
+enum = cow.each_thing(5) # => #<Enumerator: #<Cow:0x007fdb74807dc8>:each_thing(5)>
 enum.next # => 5
 ```
 
@@ -51,7 +51,7 @@ class Cow
 end
 
 cow = Cow.new
-enum = cow.each_thing(5) # => Enumerator
+enum = cow.each_thing(5) # => #<Enumerator: #<Cow:0x007fdb74807dc8>:each_thing(5)>
 enum.next # => 5
 ```
 
